@@ -59,7 +59,7 @@ O projeto contém os seguintes scripts para configuração e populamento do banc
    ```bash
    mysql -u usuario -p
    ```
-> Substitua usuario pelo perfil utilizado, por padrão, utilize `root`.
+   > Substitua usuario pelo perfil utilizado, por padrão, utilize `root`.
 
 3. **Crie o banco de dados e carregue os scripts**:
    Execute o script `setup.sql` para configurar o banco de dados:
