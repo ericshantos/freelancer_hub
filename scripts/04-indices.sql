@@ -3,13 +3,23 @@
 -- Index do atributo 'email'
 CREATE INDEX idx_email  ON usuario(email);
 
--- Index do atributo 'usuario_tipo'
-CREATE INDEX idx_tipo_usuario ON usuario(tipo_usuario);
+-- Tabela freelancer
+
+-- Index do atributo 'usuario_id'
+CREATE INDEX idx_usuario_id_freelancer ON pagamento(usuario_id);
+
+-- Tabela freelancer_habilidade
+
+-- Index do atributo 'freelancer_id'
+CREATE INDEX idx_freelancer_habilidade_freelancer_id ON freelancer_habilidade(freelancer_id);
+
+-- Index do atributo 'habilidade_id'
+CREATE INDEX idx_freelancer_habilidade_habilidade_id ON freelancer_habilidade(habilidade_id);
 
 -- Tabela pagamento
 
 -- Index do atributo 'usuario_id'
-CREATE INDEX idx_usuario_id ON pagamento(usuario_id);
+CREATE INDEX idx_usuario_id_pag ON pagamento(usuario_id);
 
 -- Index do atributo 'projeto_id'
 CREATE INDEX idx_projeto_id ON pagamento(projeto_id);
@@ -48,5 +58,8 @@ CREATE INDEX idx_status_feedback ON feedback(status_feedback);
 
 -- Tabela projeto
 
--- Index do atributo 'usuario_id'
-CREATE INDEX idx_usuario_id_projeto ON projeto(usuario_id);
+-- Index do atributo 'freelancer_id'
+CREATE INDEX idx_freelancer_id_projeto ON projeto(freelancer_id);
+
+-- Index do atributo 'contratante_id'
+CREATE INDEX idx_contratante_id_projeto ON projeto(contratante_id);
