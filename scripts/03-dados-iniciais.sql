@@ -1,73 +1,69 @@
--- Dados para a tabela 'usuario'
+-- Inserindo usuários
 INSERT INTO usuario (nome, email, senha, tipo_usuario) VALUES
-('Carlos Souza', 'carlos.souza@email.com', 'senha1', 'Freelancer'),
-('Fernanda Almeida', 'fernanda.almeida@email.com', 'senha2', 'Cliente'),
-('João Pereira', 'joao.pereira@email.com', 'senha3', 'Freelancer'),
-('Maria Oliveira', 'maria.oliveira@email.com', 'senha4', 'Cliente'),
-('Lucas Silva', 'lucas.silva@email.com', 'senha5', 'Freelancer'),
-('Ana Costa', 'ana.costa@email.com', 'senha6', 'Cliente'),
-('Paulo Santos', 'paulo.santos@email.com', 'senha7', 'Freelancer'),
-('Juliana Lima', 'juliana.lima@email.com', 'senha8', 'Cliente'),
-('Rafael Oliveira', 'rafael.oliveira@email.com', 'senha9', 'Freelancer'),
-('Beatriz Rocha', 'beatriz.rocha@email.com', 'senha10', 'Cliente'),
-('Marcos Fernandes', 'marcos.fernandes@email.com', 'senha11', 'Freelancer'),
-('Larissa Almeida', 'larissa.almeida@email.com', 'senha12', 'Cliente'),
-('Felipe Souza', 'felipe.souza@email.com', 'senha13', 'Freelancer'),
-('Tatiane Pereira', 'tatiane.pereira@email.com', 'senha14', 'Cliente'),
-('Eduardo Silva', 'eduardo.silva@email.com', 'senha15', 'Freelancer'),
-('Carla Mendes', 'carla.mendes@email.com', 'senha16', 'Cliente'),
-('Gustavo Ramos', 'gustavo.ramos@email.com', 'senha17', 'Freelancer'),
-('Larissa Costa', 'larissa.costa@email.com', 'senha18', 'Cliente'),
-('Ricardo Oliveira', 'ricardo.oliveira@email.com', 'senha19', 'Freelancer'),
-('Isabela Lima', 'isabela.lima@email.com', 'senha20', 'Cliente');
+('Carlos Silva', 'carlos.silva@email.com', 'senha123', 'freelancer'),
+('Maria Oliveira', 'maria.oliveira@email.com', 'senha123', 'contratante'),
+('José Souza', 'jose.souza@email.com', 'senha123', 'freelancer'),
+('Ana Costa', 'ana.costa@email.com', 'senha123', 'freelancer'),
+('Ricardo Martins', 'ricardo.martins@email.com', 'senha123', 'contratante'),
+('Lucas Pereira', 'lucas.pereira@email.com', 'senha123', 'freelancer'),
+('Fernanda Lima', 'fernanda.lima@email.com', 'senha123', 'contratante'),
+('Eduardo Rocha', 'eduardo.rocha@email.com', 'senha123', 'freelancer'),
+('Patricia Gomes', 'patricia.gomes@email.com', 'senha123', 'freelancer'),
+('Juliana Silva', 'juliana.silva@email.com', 'senha123', 'contratante');
 
--- Dados para a tabela 'projeto'
-INSERT INTO projeto (titulo, descricao, status_projeto, usuario_id) VALUES
-('Website para Loja', 'Desenvolvimento de um e-commerce para loja de roupas', 'Em desenvolvimento', 1),
-('App de Saúde', 'Desenvolvimento de aplicativo para controle de saúde', 'Concluído', 2),
-('Consultoria de TI', 'Consultoria para a estrutura de TI de uma empresa', 'Em desenvolvimento', 3),
-('Site Institucional', 'Desenvolvimento de site institucional para uma ONG', 'Concluído', 4),
-('Campanha de Marketing', 'Criação de campanha de marketing digital', 'Em desenvolvimento', 5),
-('Fotografia para Evento', 'Cobertura fotográfica de casamento', 'Concluído', 6),
-('Consultoria SEO', 'Ajustes em SEO de um site institucional', 'Em desenvolvimento', 7),
-('Edição de Vídeo', 'Edição de vídeo institucional para empresa', 'Concluído', 8),
-('Criação de Conteúdo', 'Criação de conteúdo para blog corporativo', 'Em desenvolvimento', 9),
-('Desenvolvimento de Site', 'Criação de site para empresa de software', 'Concluído', 10),
-('Design de Interface', 'Criação de interface para aplicativo de transporte', 'Em desenvolvimento', 11),
-('Sistema de Gestão', 'Desenvolvimento de sistema de gestão para clínica médica', 'Concluído', 12),
-('Consultoria Financeira', 'Consultoria financeira para startup', 'Em desenvolvimento', 13),
-('Sistema E-commerce', 'Desenvolvimento de sistema de e-commerce para loja de eletrônicos', 'Concluído', 14),
-('Marketing Digital', 'Criação de estratégia de marketing digital para empresa', 'Em desenvolvimento', 15),
-('Desenvolvimento de Jogo', 'Criação de jogo para plataforma mobile', 'Concluído', 16),
-('Gestão de Projetos', 'Implementação de metodologia ágil em empresa de TI', 'Em desenvolvimento', 17),
-('Projeto de Móveis', 'Desenvolvimento de projeto de móveis para escritório', 'Concluído', 18),
-('Gestão de Redes Sociais', 'Gestão de redes sociais para empresa de moda', 'Em desenvolvimento', 19),
-('Consultoria em TI', 'Consultoria em TI para empresas do setor financeiro', 'Concluído', 20);
+-- Inserindo freelancers
+INSERT INTO freelancer (usuario_id, portfolio, avaliacao, experiencia_profissional, localizacao) VALUES
+(1, 'portfolio_link_1', 4.5, '5 anos de experiência em design gráfico', 'São Paulo'),
+(2, 'portfolio_link_2', 4.0, '3 anos de experiência em desenvolvimento web', 'Rio de Janeiro'),
+(3, 'portfolio_link_3', 3.8, '2 anos de experiência em marketing digital', 'Belo Horizonte'),
+(4, 'portfolio_link_4', 4.7, '7 anos de experiência em edição de vídeo', 'Curitiba'),
+(5, 'portfolio_link_5', 4.3, '4 anos de experiência em programação', 'Porto Alegre'),
+(6, 'portfolio_link_6', 3.5, '3 anos de experiência em design gráfico', 'São Paulo'),
+(7, 'portfolio_link_7', 4.2, '6 anos de experiência em web design', 'Rio de Janeiro'),
+(8, 'portfolio_link_8', 4.6, '8 anos de experiência em fotografia', 'Brasília'),
+(9, 'portfolio_link_9', 4.0, '4 anos de experiência em publicidade', 'Salvador'),
+(10, 'portfolio_link_10', 4.4, '5 anos de experiência em branding', 'Fortaleza');
 
--- Dados para a tabela 'pagamento'
-INSERT INTO pagamento (metodo_pagamento, valor, status_pagamento, usuario_id, projeto_id) VALUES
-('Pix', 100.00, 'Concluído', 1, 1),
-('Transferência bancária', 200.00, 'Em andamento', 2, 2),
-('Boleto', 300.00, 'Concluído', 3, 3),
-('Cartão de Crédito', 400.00, 'Em andamento', 4, 4),
-('Pix', 150.00, 'Concluído', 5, 5),
-('Transferência bancária', 250.00, 'Concluído', 6, 6),
-('Boleto', 350.00, 'Em andamento', 7, 7),
-('Cartão de Crédito', 450.00, 'Concluído', 8, 8),
-('Pix', 500.00, 'Em andamento', 9, 9),
-('Transferência bancária', 600.00, 'Concluído', 10, 10),
-('Boleto', 750.00, 'Em andamento', 11, 11),
-('Cartão de Crédito', 850.00, 'Concluído', 12, 12),
-('Pix', 900.00, 'Em andamento', 13, 13),
-('Transferência bancária', 1000.00, 'Concluído', 14, 14),
-('Boleto', 1100.00, 'Em andamento', 15, 15),
-('Cartão de Crédito', 1200.00, 'Concluído', 16, 16),
-('Pix', 1300.00, 'Em andamento', 17, 17),
-('Transferência bancária', 1400.00, 'Concluído', 18, 18),
-('Boleto', 1500.00, 'Em andamento', 19, 19),
-('Cartão de Crédito', 1600.00, 'Concluído', 20, 20);
+-- Inserindo habilidades
+INSERT INTO habilidade (competencia) VALUES
+('Design Gráfico'),
+('Desenvolvimento Web'),
+('SEO'),
+('Marketing Digital'),
+('Edição de Vídeo'),
+('Fotografia'),
+('Copywriting'),
+('Branding'),
+('Gestão de Projetos'),
+('UI/UX Design');
 
--- Dados para a tabela 'seguranca'
+-- Associando freelancers com habilidades
+INSERT INTO freelancer_habilidade (freelancer_id, habilidade_id, nivel) VALUES
+(1, 1, 'Avançado'),
+(2, 2, 'Intermediário'),
+(3, 4, 'Básico'),
+(4, 5, 'Avançado'),
+(5, 2, 'Avançado'),
+(6, 1, 'Intermediário'),
+(7, 2, 'Avançado'),
+(8, 6, 'Especialista'),
+(9, 7, 'Avançado'),
+(10, 8, 'Avançado');
+
+-- Inserindo contratantes
+INSERT INTO contratante (usuario_id, empresa, cnpj) VALUES
+(1, 'Tech Solutions', '12345678000195'),
+(2, 'Digital Creators', '23456789000196'),
+(3, 'WebDesign Ltda', '34567890000197'),
+(4, 'FotoArt', '45678901000198'),
+(5, 'Media Marketing', '56789012000199'),
+(6, 'DevStudio', '67890123000120'),
+(7, 'WebSolutions', '78901234000121'),
+(8, 'FotoPro', '89012345000122'),
+(9, 'AdvertiseMe', '90123456000123'),
+(10, 'Branding Masters', '01234567000124');
+
+-- Inserindo segurança
 INSERT INTO seguranca (nivel_seguranca, status_seguranca, usuario_id) VALUES
 ('Ouro', 'Verificado', 1),
 ('Prata', 'Pendente', 2),
@@ -78,83 +74,17 @@ INSERT INTO seguranca (nivel_seguranca, status_seguranca, usuario_id) VALUES
 ('Ouro', 'Verificado', 7),
 ('Prata', 'Pendente', 8),
 ('Bronze', 'Não verificado', 9),
-('Ouro', 'Verificado', 10),
-('Prata', 'Pendente', 11),
-('Bronze', 'Não verificado', 12),
-('Ouro', 'Verificado', 13),
-('Prata', 'Pendente', 14),
-('Bronze', 'Não verificado', 15),
-('Ouro', 'Verificado', 16),
-('Prata', 'Pendente', 17),
-('Bronze', 'Não verificado', 18),
-('Ouro', 'Verificado', 19),
-('Prata', 'Pendente', 20);
+('Ouro', 'Verificado', 10);
 
--- Dados para a tabela 'servico'
-INSERT INTO servico (titulo, descricao, valor, usuario_id) VALUES
-('Desenvolvimento Web', 'Desenvolvimento de sites responsivos', 1500.00, 1),
-('Design Gráfico', 'Criação de logotipos e materiais gráficos', 1200.00, 2),
-('Consultoria de TI', 'Consultoria para infraestrutura de TI', 2000.00, 3),
-('Desenvolvimento de App', 'Desenvolvimento de aplicativos móveis', 2500.00, 4),
-('SEO', 'Otimização de sites para mecanismos de busca', 1000.00, 5),
-('Fotografia Profissional', 'Sessões fotográficas para eventos', 1800.00, 6),
-('Redação de Conteúdo', 'Criação de conteúdo escrito para sites e blogs', 800.00, 7),
-('Edição de Vídeo', 'Edição de vídeos para YouTube e mídias sociais', 1500.00, 8),
-('Tradução de Textos', 'Serviço de tradução de textos técnicos e literários', 950.00, 9),
-('Consultoria Financeira', 'Consultoria financeira para empresas e indivíduos', 3000.00, 10),
-('Marketing Digital', 'Gestão de campanhas de marketing online', 2000.00, 11),
-('Desenvolvimento de Jogos', 'Criação de jogos para desktop e mobile', 3500.00, 12),
-('Análise de Dados', 'Análise de grandes volumes de dados', 2200.00, 13),
-('Gestão de Projetos', 'Gerenciamento de projetos ágeis', 1700.00, 14),
-('Desenvolvimento de E-commerce', 'Criação de lojas virtuais', 2700.00, 15),
-('Copywriting', 'Escrita persuasiva para páginas de vendas', 1200.00, 16),
-('Design de Interiores', 'Criação de projetos de design de interiores', 2500.00, 17),
-('Gestão de Redes Sociais', 'Gestão de contas de redes sociais', 1100.00, 18),
-('Segurança da Informação', 'Consultoria em segurança cibernética', 4000.00, 19),
-('Gestão de Eventos', 'Organização de eventos corporativos', 2300.00, 20);
-
--- Dados para a tabela 'avaliacao'
-INSERT INTO avaliacao (comentario, status_avaliacao, projeto_id, usuario_id) VALUES
-('Excelente serviço, super recomendo!', 'Aprovado', 1, 1),
-('Muito bom, mas poderia melhorar o tempo de resposta', 'Aprovado', 2, 2),
-('Ótimo trabalho, gostei do resultado final', 'Em análise', 3, 3),
-('Fiquei satisfeito com o serviço prestado', 'Aprovado', 4, 4),
-('Poderia ter sido mais detalhado', 'Aprovado', 5, 5),
-('Excelente trabalho, muito profissional', 'Em análise', 6, 6),
-('Gostei muito do trabalho, recomendo', 'Aprovado', 7, 7),
-('Entrega rápida e serviço de qualidade', 'Aprovado', 8, 8),
-('O trabalho foi bem feito, mas o prazo foi longo', 'Em análise', 9, 9),
-('Muito bom, porém precisa de ajustes', 'Aprovado', 10, 10),
-('Trabalho de alta qualidade, muito satisfeito', 'Aprovado', 11, 11),
-('Não atendeu minhas expectativas', 'Em análise', 12, 12),
-('Excelente serviço, com boa comunicação', 'Aprovado', 13, 13),
-('Trabalho perfeito, super indico', 'Aprovado', 14, 14),
-('O trabalho ficou bom, mas poderia ser melhor', 'Em análise', 15, 15),
-('A qualidade do serviço é boa', 'Aprovado', 16, 16),
-('Fiquei um pouco decepcionado com o resultado', 'Em análise', 17, 17),
-('Serviço muito bom, mas o preço foi alto', 'Aprovado', 18, 18),
-('Excelente, superou minhas expectativas', 'Aprovado', 19, 19),
-('O serviço foi bom, mas o tempo poderia ser menor', 'Em análise', 20, 20);
-
--- Dados para a tabela 'feedback'
-INSERT INTO feedback (comentario, tipo, status_feedback, usuario_id) VALUES
-('Ótimo serviço, mas demorou um pouco para ser entregue', 'Sugestão', 'Aberto', 1),
-('Gostei muito do atendimento', 'Elogio', 'Pendente', 2),
-('O prazo não foi cumprido, mas o trabalho ficou bom', 'Reclamação', 'Aberto', 3),
-('O site ficou muito bom, mas o preço poderia ser menor', 'Sugestão', 'Pendente', 4),
-('Atendimento excelente, recomendo', 'Elogio', 'Aberto', 5),
-('Não fiquei satisfeito com a entrega', 'Reclamação', 'Pendente', 6),
-('A comunicação foi muito boa durante o processo', 'Elogio', 'Aberto', 7),
-('A qualidade do serviço atendeu minhas expectativas', 'Elogio', 'Pendente', 8),
-('Precisa melhorar a parte visual do projeto', 'Sugestão', 'Aberto', 9),
-('Bom trabalho, mas o prazo poderia ser mais rápido', 'Sugestão', 'Pendente', 10),
-('Fiquei satisfeito, mas poderia ter sido mais barato', 'Sugestão', 'Aberto', 11),
-('Muito bom, mas o suporte poderia ser melhor', 'Sugestão', 'Pendente', 12),
-('Recomendo para todos, ótimo trabalho', 'Elogio', 'Aberto', 13),
-('O serviço ficou abaixo do esperado', 'Reclamação', 'Pendente', 14),
-('Atendimento muito bom, recomendo!', 'Elogio', 'Aberto', 15),
-('O trabalho ficou bom, mas o valor foi um pouco alto', 'Sugestão', 'Pendente', 16),
-('Gostei muito, mas a comunicação precisa melhorar', 'Sugestão', 'Aberto', 17),
-('O trabalho ficou ótimo, mas o prazo foi longo', 'Sugestão', 'Pendente', 18),
-('Excelente serviço, super recomendo', 'Elogio', 'Aberto', 19),
-('Poderia ser melhor, mas o serviço foi bom', 'Sugestão', 'Pendente', 20);
+-- Inserindo projetos
+INSERT INTO projeto (titulo, descricao, nota, status_projeto, freelancer_id, contratante_id) VALUES
+('Desenvolvimento de Logotipo', 'Criação de logotipo exclusivo para a empresa', 4.7, 'Concluído', 1, 2),
+('Criação de Website', 'Desenvolvimento de um website completo', 4.5, 'Em desenvolvimento', 2, 3),
+('Campanha Publicitária', 'Gestão de anúncios para lançamento de produto', 4.3, 'Concluído', 3, 4),
+('Vídeo Institucional', 'Criação de vídeo institucional para empresa', 4.6, 'Em desenvolvimento', 4, 5),
+('Software de Gestão', 'Desenvolvimento de um software personalizado para gestão interna', 4.8, 'Em desenvolvimento', 5, 6),
+('Identidade Visual', 'Criação de identidade visual para marca', 4.4, 'Concluído', 6, 7),
+('Fotografia Corporativa', 'Realização de ensaio fotográfico para empresa', 4.7, 'Em desenvolvimento', 7, 8),
+('Redação Publicitária', 'Criação de conteúdo publicitário para website', 4.3, 'Concluído', 8, 9),
+('Design de Interface', 'Desenvolvimento de interface para aplicativo', 4.5, 'Em desenvolvimento', 9, 10),
+('Consultoria de Branding', 'Desenvolvimento de estratégias para marca', 4.6, 'Concluído', 10, 1);

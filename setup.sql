@@ -1,5 +1,5 @@
 -- Criação do banco de dados
-source scripts/00-criacao-banco.sql;
+source scripts/00-criar-banco.sql;
 
 -- Definição das tabelas
 source scripts/01-tabelas.sql;
@@ -11,7 +11,7 @@ source scripts/02-relacionamentos.sql;
 source scripts/03-dados-iniciais.sql;
 
 -- Criação de índices
-source scripts/04-indexes.sql;
+source scripts/04-indices.sql;
 
 -- Implementação de triggers
 source scripts/05-triggers.sql;
