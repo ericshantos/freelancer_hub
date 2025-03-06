@@ -26,16 +26,17 @@ ADD CONSTRAINT fk_seguranca_usuario FOREIGN KEY (usuario_id) REFERENCES usuario(
 ALTER TABLE servico 
 ADD CONSTRAINT fk_servico_usuario FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE;
 
--- Tabela de availiação
-
+-- Table: Evaluation
 ALTER TABLE avaliacao 
-ADD CONSTRAINT fk_avaliacao_usuario FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE,
-ADD CONSTRAINT fk_avaliacao_projeto FOREIGN KEY (projeto_id) REFERENCES projeto(id) ON DELETE CASCADE;
+    -- Relates the evaluation to the user who is making the evaluation (client)
+    ADD CONSTRAINT fk_avaliacao_usuario FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE,
+    -- Relates the evaluation to the project being evaluated
+    ADD CONSTRAINT fk_avaliacao_projeto FOREIGN KEY (projeto_id) REFERENCES projeto(projeto_id) ON DELETE CASCADE;
 
--- Tabela de feedback
-
+-- Table: Feedback
 ALTER TABLE feedback 
-ADD CONSTRAINT fk_feedback_usuario FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE;
+    -- Relates the feedback to the user who left it (could be a client or freelancer)
+    ADD CONSTRAINT fk_feedback_usuario FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE;
 
 -- Tabela de projeto
 
