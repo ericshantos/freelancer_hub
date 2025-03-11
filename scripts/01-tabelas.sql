@@ -87,13 +87,12 @@ CREATE TABLE feedback (
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE projeto (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(80) NOT NULL,
-    descricao TEXT NOT NULL,
-    nota DECIMAL(2,1) NOT NULL,
-    status_projeto ENUM('Em desenvolvimento', 'Concluído') NOT NULL,
-    freelancer_id INT NOT NULL,
-    contratante_id INT NOT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE projetos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    id_cliente INT,
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_cliente) REFERENCES usuarios(id) ON DELETE CASCADE
+);
 );
