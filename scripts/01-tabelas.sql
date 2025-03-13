@@ -95,6 +95,19 @@ CREATE TABLE projetos (
     data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_cliente) REFERENCES usuarios(id) ON DELETE CASCADE
 );
+
+CREATE TABLE Penalizacoes (
+    id_penalizacao INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    tipo_penalizacao ENUM('Suspensão', 'Multa'),
+    valor_penalizacao DECIMAL(10, 2),
+    data_penalizacao DATE,
+    descricao TEXT,
+    situation_penalizacao VARCHAR(50),
+    id_pagamento INT,
+    projeto_id INT
+);
+
 );
 
 use pagamentosecurity;

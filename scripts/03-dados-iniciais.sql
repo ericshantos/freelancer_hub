@@ -1,3 +1,4 @@
+
 -- Inserindo usuários
 INSERT INTO usuario (nome, email, senha, tipo_usuario) VALUES
 ('Carlos Silva', 'carlos.silva@email.com', 'senha123', 'freelancer'),
@@ -88,3 +89,16 @@ INSERT INTO projeto (titulo, descricao, nota, status_projeto, freelancer_id, con
 ('Redação Publicitária', 'Criação de conteúdo publicitário para website', 4.3, 'Concluído', 8, 9),
 ('Design de Interface', 'Desenvolvimento de interface para aplicativo', 4.5, 'Em desenvolvimento', 9, 10),
 ('Consultoria de Branding', 'Desenvolvimento de estratégias para marca', 4.6, 'Concluído', 10, 1);
+
+-- Inserindo dados na tabela Penalizacoes
+INSERT INTO Penalizacoes (usuario_id, tipo_penalizacao, valor_penalizacao, data_penalizacao, descricao, situation_penalizacao, id_pagamento, projeto_id) VALUES
+(1, 'Multa', 50.00, '2023-11-20', 'Atraso na entrega do projeto.', 'Pendente', 101, 1),
+(2, 'Suspensão', 0.00, '2023-11-25', 'Violação dos termos de serviço.', 'Concluído', NULL, 2),
+(3, 'Multa', 75.50, '2023-12-01', 'Qualidade insatisfatória do trabalho.', 'Pendente', 102, 3),
+(4, 'Multa', 100.00, '2023-12-05', 'Abandono do projeto sem aviso prévio.', 'Concluído', 103, 4),
+(5, 'Suspensão', 0.00, '2023-12-10', 'Comportamento inadequado na plataforma.', 'Pendente', NULL, 5),
+(6, 'Multa', 30.00, '2023-12-15', 'Não cumprimento de prazos.', 'Concluído', 104, 6),
+(7, 'Multa', 120.00, '2023-12-20', 'Plágio de conteúdo.', 'Pendente', 105, 7),
+(8, 'Suspensão', 0.00, '2023-12-25', 'Uso de linguagem ofensiva.', 'Concluído', NULL, 8),
+(9, 'Multa', 60.00, '2023-12-30', 'Não entrega de revisões solicitadas.', 'Pendente', 106, 9),
+(10, 'Multa', 90.00, '2024-01-05', 'Divulgação de informações confidenciais.', 'Concluído', 107, 10);
