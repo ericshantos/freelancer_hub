@@ -126,6 +126,50 @@ INSERT INTO seguranca (nivel, criado_em, atualizado_em, status, usuario_id) VALU
 
 SELECT * FROM usuario;
 SELECT * FROM pagamento;
+ -- Emilly--
+CREATE DATABASE Segurança;
+
+USE Segurança;
+
+-- Criando a tabela de usuários
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,               -- Identificador único do usuário
+    nome VARCHAR(255) NOT NULL,                       -- Nome do usuário
+    email VARCHAR(255) NOT NULL UNIQUE,               -- Email único para identificação
+    senha VARCHAR(255) NOT NULL,                      -- Senha criptografada
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Data de criação do usuário
+    ultima_modificacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Última modificação do usuário
+);
+
+-- Criando a tabela de logins de acesso
+CREATE TABLE Logs_Acesso (
+    id INT AUTO_INCREMENT PRIMARY KEY,               -- Identificador único do log
+    usuário_id INT,                                  -- Referência ao usuário que fez o login
+    acao VARCHAR(255) NOT NULL,                       -- Ação realizada (ex: login, logout)
+    ip_cliente VARCHAR(45),                          -- IP do cliente que acessou
+    data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    -- Data e hora do acesso
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id) -- Relacionamento com a tabela de usuários
+);
+
+-- Criando a tabela de autenticação multifatorial (MFA)
+CREATE TABLE Autenticacao_MFA (
+    id INT AUTO_INCREMENT PRIMARY KEY,               -- Identificador único do registro
+    usuario_id INT,                                  -- Referência ao usuário
+    mfa_ativado BOOLEAN DEFAULT FALSE,               -- Se a MFA está ativada para o usuário
+    metodo_mfa VARCHAR(50),                          -- Método de MFA (ex: SMS, aplicativo, etc.)
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Data de criação do registro
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id) -- Relacionamento com a tabela de usuários
+);
+
+-- Criando a tabela de tentativas falhas de login
+CREATE TABLE Tentativas_Falhas (
+    id INT AUTO_INCREMENT PRIMARY KEY,               -- Identificador único da tentativa
+    usuario_id INT,                                  -- Referência ao usuário
+    tentativa_falha BOOLEAN DEFAULT TRUE,            -- Se a tentativa foi falha
+    data_tentativa TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Data e hora da tentativa
+    ip_cliente VARCHAR(45),                          -- IP de onde foi feita a tentativa
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id) -- Relacionamento com a tabela de usuários
+);
 SELECT * FROM seguranca;
 
 SELECT seguranca.id, usuario.nome, seguranca.nivel, seguranca.status, seguranca.criado_em
