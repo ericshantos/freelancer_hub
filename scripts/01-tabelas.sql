@@ -96,3 +96,39 @@ CREATE TABLE projetos (
     FOREIGN KEY (id_cliente) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 );
+
+use pagamentosecurity;
+
+SHOW TABLES;
+
+SELECT * FROM usuario;
+SELECT * FROM pagamento;
+SELECT * FROM seguranca;
+
+INSERT INTO usuario (Nome, Email, Senha, Tipo) VALUES
+('otavio', 'otavio@email.com', 'senha123w', 'Cliente'),
+('Marissa', 'marissa@email.com', 'senha456q', 'Freelancer'),
+('Carlos Mendes', 'carlos@email.com', 'senha789q', 'Cliente');
+
+INSERT INTO pagamento (titulo, descricao, usuario_id) VALUES
+('Compra de livro', 'compra de um livro online', 1),
+('Assinatura mensal', 'serviço', 2),
+('Compra de software', 'Licença anual de software', 14);
+
+SELECT pagamento.id, pagamento.titulo, usuario.nome 
+FROM pagamento 
+JOIN usuario ON pagamento.usuario_id = usuario.id;
+
+INSERT INTO seguranca (nivel, criado_em, atualizado_em, status, usuario_id) VALUES
+('Alto', NOW(), NOW(), 'Ativo', 1),
+('Médio', NOW(), NOW(), 'Inativo', 2),
+('Baixo', NOW(), NOW(), 'Ativo', 14);
+
+SELECT * FROM usuario;
+SELECT * FROM pagamento;
+SELECT * FROM seguranca;
+
+SELECT seguranca.id, usuario.nome, seguranca.nivel, seguranca.status, seguranca.criado_em
+FROM seguranca
+JOIN usuario ON seguranca.usuario_id = usuario.id
+ORDER BY seguranca.criado_em DESC;
